@@ -9,12 +9,11 @@ public class TestFraction {
      
      public void run() {
             testPGCD();
-          
-          //testBasic();
-          //testMultiplieParCoeff();
-          //testInverse();
-          //testEgale();
-          //testReduire();          
+            testBasic();
+            testMultiplieParCoeff();
+            testInverse();
+            testEgale();
+            testReduire();
           //testAjoute();
           //testSoustrait();
           //testMultiplie();
@@ -36,7 +35,7 @@ public class TestFraction {
 
           System.out.println();
      }
- /*
+
      
      public void testBasic() {
           // need to test new Fraction(5,0) !!!
@@ -70,7 +69,7 @@ public class TestFraction {
           
           System.out.println();          
      }
-     
+
      public void testMultiplieParCoeff() {
           System.out.println("== Test MultiplieParCoeff ");
                     
@@ -87,7 +86,7 @@ public class TestFraction {
           
           System.out.println();                         
      }
-     
+
      public void testInverse() {
           System.out.println("== Test Inverse");
           
@@ -113,7 +112,7 @@ public class TestFraction {
           
           System.out.println();                    
      }
-     
+
      public void testEgale() {
           System.out.println("== Test Egale");
           
@@ -134,10 +133,10 @@ public class TestFraction {
           check("-1/2 egale 1/-2", f5.egaleA(f4), "attendue: vrai");
           check("1/2 egale -1/-2", f.egaleA(f6), "attendue: vrai");
           check("-1/-2 egale 1/2", f6.egaleA(f), "attendue: vrai");     
-          
-          System.out.println();               
+
+          System.out.println();
      }
-     
+
      public void testReduire() {
           System.out.println("== Test Reduire");
           
@@ -164,7 +163,7 @@ public class TestFraction {
           
           System.out.println();
      }     
-     
+ /*
      public void testAjoute() {
           System.out.println("== Test Ajoute");
           

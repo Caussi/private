@@ -2,9 +2,9 @@ public class Fraction {
     int numerateur;
     int denominateur;
 
-    public Fraction(int numerateur,int denominateur){
-    this.numerateur = numerateur;
-    this.denominateur = denominateur;
+    public Fraction(int numerateur, int denominateur) {
+        this.numerateur = numerateur;
+        this.denominateur = denominateur;
     }
 
     public static int pgcd(int a, int b) {
@@ -32,4 +32,29 @@ public class Fraction {
     public int getDenominateur() {
         return denominateur;
     }
+
+    public void multiplierParCoeff(int a) {
+        this.numerateur = numerateur * a;
+    }
+
+    public void inverse() {
+        int temp = numerateur;
+        numerateur = denominateur;
+        denominateur = temp;
+    }
+
+    public boolean egaleA(Fraction f) {
+        new Fraction(numerateur, denominateur);
+        boolean r;
+        r = this.numerateur * denominateur == numerateur * this.denominateur;
+        return r;
+    }
+
+    public void reduire() {
+        new Fraction(numerateur/ pgcd(this.numerateur, this.denominateur), denominateur/ pgcd(this.numerateur, this.denominateur));
+    }
 }
+
+
+
+
