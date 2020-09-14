@@ -44,15 +44,40 @@ public class Fraction {
     }
 
     public boolean egaleA(Fraction f) {
-        new Fraction(numerateur, denominateur);
         boolean r;
-        r = this.numerateur * denominateur == numerateur * this.denominateur;
+        r = this.numerateur * this.denominateur == f.numerateur * f.denominateur;
         return r;
     }
 
-    public void reduire() {
-        new Fraction(numerateur/ pgcd(this.numerateur, this.denominateur), denominateur/ pgcd(this.numerateur, this.denominateur));
+    int abs(int x) {
+        if (x > 0) {
+            return x;
+        } else {
+            return -x;
+        }
     }
+    public void reduire() {
+        new Fraction(numerateur/ pgcd(abs(this.numerateur), abs(this.denominateur)),
+                denominateur/ pgcd(abs(this.numerateur), abs(this.denominateur)));
+    }
+
+    public void ajoute(Fraction f){
+        Fraction r = new Fraction (numerateur,denominateur);
+        new Fraction(numerateur*f.denominateur + denominateur*f.numerateur, denominateur*f.denominateur);
+        f.numerateur = this.numerateur * f.denominateur + f.numerateur * this.denominateur;
+        f.denominateur = this.denominateur * f.denominateur;
+
+    }
+    public void soustrait(Fraction f){
+        Fraction r = new Fraction(numerateur, denominateur);
+        new Fraction(r.numerateur * f.denominateur - f.numerateur * r.denominateur, r.denominateur * f.denominateur);
+    }
+    public void multiplie(Fraction f){
+        Fraction r = new Fraction(numerateur, denominateur);
+        new Fraction(r.numerateur*f.denominateur, r.denominateur*f.denominateur);
+
+    }
+
 }
 
 
