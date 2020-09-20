@@ -5,40 +5,41 @@ public class TestPoint {
     int y; //ordonnée
 
     public void testOrigine() {
-        check(origine.getX());
-        check(origine.getY());
+     //   check(origine.getX());
+       // check(origine.getY());
     }
 
-    Test new(3.,2.).
+   // Test new(3.,2.).
 
-    getX()
-    Test new(3.,2.).
+    //getX()
+    //Test new(3.,2.).
 
-    getY()
+    //getY()
 
-    Test copy(3.,2.).
+    //Test copy(3.,2.).
 
-    getX()
+    //getX()
 
-    Test copy(3.,2.).
+    //Test copy(3.,2.).
 
-    getY()
+    //getY()
 
-    Test setX(4.).
+    //Test setX(4.).
 
-    getX()
+    //getX()
 
-    Test setY(7.).
+    //Test setY(7.).
 
-    getY()
+    //getY()
 
-    Test(2.,3.).
+    //Test(2.,3.).
 
-    translater(4.,7.)
+    //translater(4.,7.)
 
-    Test(2.,3.).
+    //Test(2.,3.).
 
-    translater(4.,7.)
+    //translater(4.,7.)
+
 
 
 }

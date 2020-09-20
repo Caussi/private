@@ -15,9 +15,9 @@ public class TestFraction {
             testEgale();
             testReduire();
             testAjoute();
-            //testSoustrait();
-            //testMultiplie();
-          //testDivise();
+            testSoustrait();
+            testMultiplie();
+            testDivise();
           
           System.out.println("*** TESTS RUN: "+testCount+" - FAILURE: "+testFailed+" SUCCESS: "+(testCount-testFailed)+" ***");
      }
@@ -168,8 +168,9 @@ public class TestFraction {
           System.out.println("== Test Ajoute");
           
           Fraction f = new Fraction(1,2);
-          Fraction f2 = new Fraction(3,2);          
+          Fraction f2 = new Fraction(3,2);
           f.ajoute(f2);
+
           check("1/2 + 3/2 ", f.egaleA(new Fraction(4,2)), "attendu: 4/2 \nobtenu: "+format(f));
      
      
@@ -209,7 +210,7 @@ public class TestFraction {
           f = new Fraction(10,2);
           f2 = new Fraction(5,4);
           f.soustrait(f2);
-          check("10/2 - 5/2 ", f.egaleA(new Fraction(5,2)), "attendu: 5/2 \nobtenu: "+format(f));
+          check("10/2 - 5/4 ", f.egaleA(new Fraction(15,4)), "attendu: 15/4 \nobtenu: "+format(f));
 
 
           Fraction f3 = new Fraction(1,2);
@@ -235,7 +236,7 @@ public class TestFraction {
      public void testMultiplie() {
           System.out.println("== Test Multiplie");
           
-           Fraction f = new Fraction(1,2);
+          Fraction f = new Fraction(1,2);
           Fraction f2 = new Fraction(3,2);
           f.multiplie(f2);
           check("1/2 * 3/2 ", f.egaleA(new Fraction(3,4)), "attendu: 3/4 \nobtenu: "+format(f));
@@ -266,20 +267,42 @@ public class TestFraction {
           
           System.out.println();
      }
- /*
+
      public void testDivise() {
           System.out.println("== Test Divise");
-          
-          // A COMPLETER
+
+          Fraction f = new Fraction(1,2);
+          Fraction f2 = new Fraction(3,2);
+          f.divise(f2);
+          check("1/2 / 3/2 ", f.egaleA(new Fraction(2,6)), "attendu: 2/6 \nobtenu: "+format(f));
+
+
+          f = new Fraction(10,2);
+          f2 = new Fraction(5,4);
+          f.divise(f2);
+          check("10/2 / 5/4 ", f.egaleA(new Fraction(40,10)), "attendu: 40/10 \nobtenu: "+format(f));
+
+
+          Fraction f3 = new Fraction(1,2);
+          Fraction f4 = new Fraction(-1,2);
+          f3.divise(f4);
+          check("1/2 / -1/2 ", f3.egaleA(new Fraction(2,-2)), "attendu: -2/2 \nobtenu: "+format(f3));
+
+          f3 = new Fraction(1,2);
+          f4 = new Fraction(-1,2);
+          f4.divise(f3);
+          check("-1/2 / 1/2 ", f4.egaleA(new Fraction(-2,2)), "attendu: -2/2 \nobtenu: "+format(f4));
+
+          f3 = new Fraction(1,2);
+          f4 = new Fraction(1,-2);
+          f3.divise(f4);
+          check("1/2 / 1/-2 ", f3.egaleA(new Fraction(-2,2)), "attendu: -2/2 \nobtenu: "+format(f3));
+
           System.out.println("non testé, à vous d'écrire les tests");
           
           System.out.println();
      }
-*/ 
-     
-     /*
-      * Affiche le résultat d'un test
-      */
+
      private void check(String message, boolean condition, String debug) {
           testCount++;
           

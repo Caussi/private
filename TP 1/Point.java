@@ -6,10 +6,6 @@ public class Point {
 
         private static int nbPoints = 0;
 
-    public class Point(){
-        this.x=0;
-        this.y=0;
-
 
     public Point(int x,int y){
         this.x = x;
@@ -39,9 +35,10 @@ public class Point {
         // ou return new Points(this);
         // ou Point laCopie = new Points(this.x, this.y);
         //    return laCopie; -> pour segment
-
+        return null;
     }
-    public static int int getNbPoints(){
+
+    public static int getNbPoints(){
         return nbPoints;
     }
 }

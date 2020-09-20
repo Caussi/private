@@ -22,7 +22,7 @@ public class Fraction {
     }
 
     public void setDenominateur(int denominateur) {
-        this.denominateur = denominateur;
+        if(denominateur != 0){this.denominateur = denominateur;}
     }
 
     public int getNumerateur() {
@@ -34,18 +34,20 @@ public class Fraction {
     }
 
     public void multiplierParCoeff(int a) {
-        this.numerateur = numerateur * a;
+        this.numerateur = this.numerateur * a;
     }
 
     public void inverse() {
-        int temp = numerateur;
-        numerateur = denominateur;
-        denominateur = temp;
+        if(this.numerateur != 0) {
+            int temp = this.numerateur;
+            this.numerateur = this.denominateur;
+            this.denominateur = temp;
+        }
     }
 
     public boolean egaleA(Fraction f) {
         boolean r;
-        r = this.numerateur * this.denominateur == f.numerateur * f.denominateur;
+        r =  f.numerateur* this.denominateur == this.numerateur * f.denominateur;
         return r;
     }
 
@@ -57,29 +59,47 @@ public class Fraction {
         }
     }
     public void reduire() {
-        new Fraction(numerateur/ pgcd(abs(this.numerateur), abs(this.denominateur)),
-                denominateur/ pgcd(abs(this.numerateur), abs(this.denominateur)));
+        int pgcd1 = pgcd(this.numerateur, this.denominateur);
+        int r = this.numerateur/pgcd1;
+        int l = this.denominateur/pgcd1;
+        this.numerateur = r;
+        this.denominateur = l;
+
+        if (this.numerateur < 0 && this.denominateur < 0){
+            this.numerateur=abs(this.numerateur);
+            this.denominateur=abs(this.denominateur);
+        }
+        else if(this.numerateur>0 && this.denominateur<0){
+            this.numerateur = - this.numerateur;
+            this.denominateur = abs(this.denominateur);
+        }
     }
 
     public void ajoute(Fraction f){
-        Fraction r = new Fraction (numerateur,denominateur);
-        new Fraction(numerateur*f.denominateur + denominateur*f.numerateur, denominateur*f.denominateur);
-        f.numerateur = this.numerateur * f.denominateur + f.numerateur * this.denominateur;
-        f.denominateur = this.denominateur * f.denominateur;
+        Fraction l = new Fraction(this.numerateur*f.denominateur + this.denominateur*f.numerateur, this.denominateur*f.denominateur);
+        this.numerateur = l.numerateur;
+        this.denominateur = l.denominateur;
 
     }
     public void soustrait(Fraction f){
-        Fraction r = new Fraction(numerateur, denominateur);
-        new Fraction(r.numerateur * f.denominateur - f.numerateur * r.denominateur, r.denominateur * f.denominateur);
+        Fraction l = new Fraction(this.numerateur*f.denominateur - this.denominateur*f.numerateur, this.denominateur*f.denominateur);
+        this.numerateur = l.numerateur;
+        this.denominateur = l.denominateur;
+
     }
     public void multiplie(Fraction f){
-        Fraction r = new Fraction(numerateur, denominateur);
-        new Fraction(r.numerateur*f.denominateur, r.denominateur*f.denominateur);
+        Fraction l = new Fraction(this.numerateur*f.numerateur, this.denominateur*f.denominateur);
+        this.numerateur = l.numerateur;
+        this.denominateur = l.denominateur;
 
     }
 
+    public void divise(Fraction f){
+        Fraction l = new Fraction(this.numerateur*f.denominateur, this.denominateur*f.numerateur);
+        this.numerateur = l.numerateur;
+        this.denominateur = l.denominateur;
+
+    }
 }
-
-
 
 
