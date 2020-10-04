@@ -1,4 +1,4 @@
-package test;
+package blog;
 
 public abstract class AbstractTest {
 

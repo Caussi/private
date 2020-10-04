@@ -2,6 +2,7 @@ package test;
 
 import java.util.List;
 
+import blog.AbstractTest;
 import blog.Publishable;
 
 public class TestBlogServiceImpl2 extends AbstractTest {
