@@ -22,5 +22,4 @@ public class AbstractPublishableItem implements blog.Publishable{
 	}
 			
 			
-			
 }

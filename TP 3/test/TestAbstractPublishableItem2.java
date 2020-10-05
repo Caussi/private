@@ -1,7 +1,5 @@
 package test;
 
-import blog.AbstractTest;
-
 public class TestAbstractPublishableItem2 extends AbstractTest {
 
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException {

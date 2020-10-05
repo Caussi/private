@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="TP 1"/>
 	<classpathentry kind="src" path="TP 2"/>
 	<classpathentry kind="src" path="TP 3"/>
+	<classpathentry kind="src" path="TP 5"/>
 	<classpathentry kind="output" path="out/production/private"/>
 </classpath>
