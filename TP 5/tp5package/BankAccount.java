@@ -58,11 +58,14 @@ public class BankAccount implements Comparable <BankAccount>{
 
 		public int compareTo(BankAccount o) {
 			// TODO Auto-generated method stub
+			/*
 			if(this.getBalance()>o.getBalance())
 				return 1;
 			else if(this.getBalance()<o.getBalance())
 				return -1;
 			return 0;
+			*/
+			return (int)this.getBalance() - (int)o.getBalance();
 		}		
 		
 }
