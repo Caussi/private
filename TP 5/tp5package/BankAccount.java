@@ -1,9 +1,6 @@
 package tp5package;
 
 public class BankAccount implements Comparable <BankAccount>{
-	private double balance;
-
-
 	public class bankAccount {
 		/**
 		* Constructs a bank account with a zero balance.
@@ -47,6 +44,10 @@ public class BankAccount implements Comparable <BankAccount>{
 		}
 		
 		
+		public BankAccount(int i) {
+		// TODO Auto-generated constructor stub
+	}
+
 		private int getBalance() {
 			// TODO Auto-generated method stub
 			return 0;
@@ -66,6 +67,9 @@ public class BankAccount implements Comparable <BankAccount>{
 			return 0;
 			*/
 			return (int)this.getBalance() - (int)o.getBalance();
+		}
+
+		public void setBalance(double balance) {
 		}		
 		
 }

@@ -2,7 +2,7 @@ package tp5package;
 
 import java.util.TreeSet;
 
-public class ObjetOrdonnes {
+public class ObjetOrdonnes {	
 
 	public static void main(String[] args) {
 		TreeSet<Integer> lesEntiers = new TreeSet<>();

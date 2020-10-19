@@ -34,8 +34,10 @@ public class GrapheNonPondere {
 		// exemple : vérifier que A appartient au graphe, sinon ajouter A etc
 		this.ajouteSommet(origine);
 		this.ajouteSommet(destination);
-		if(!this.graphe.get(origine).contains(destination))
-			this.graphe.get(origine).add(destination);	
+		if(!this.graphe.get(origine).contains(destination)) {
+			this.graphe.get(origine).add(destination);
+		}
+
 	}
 	
 	@Override
@@ -44,15 +46,16 @@ public class GrapheNonPondere {
 		for(String sommet : this.graphe.keySet()) {
 			graphString=graphString.concat("{"+sommet+",{");
 			ArrayList<String> lesDestinations = this.graphe.get(sommet);
+			
+			
 			for(String destination : lesDestinations ) {
 				graphString=graphString.concat(destination+",");
 			}
-			graphString=graphString.concat("}}\n");
+			graphString=graphString.concat("}} \n");
 		}
 		return graphString;
 	}
 	
-		
 	
 	
 	
